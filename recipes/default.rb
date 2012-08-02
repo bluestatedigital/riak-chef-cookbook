@@ -124,7 +124,7 @@ when :riak_kv_eleveldb_backend
     owner "riak"
     mode "0755"
     action :create
-    recursive :true
+    recursive true
   end
 end
 
