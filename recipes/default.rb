@@ -119,6 +119,12 @@ end
 case node[:riak][:kv][:storage_backend]
 when :riak_kv_innostore_backend
   include_recipe "riak::innostore"
+when :riak_kv_eleveldb_backend
+  directory node[:riak][:kv][:riak_kv_eleveldb_backend_root] do
+    owner "riak"
+    mode "0755"
+    action :create
+  end
 end
 
 directory node[:riak][:package][:config_dir] do
