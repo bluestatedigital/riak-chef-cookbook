@@ -128,6 +128,13 @@ when :riak_kv_eleveldb_backend
   end
 end
 
+directory node[:riak][:core][:ring_state_dir] do
+  owner "riak"
+  mode "0755"
+  action :create
+  recursive true
+end
+
 directory node[:riak][:package][:config_dir] do
   owner "root"
   mode "0755"
