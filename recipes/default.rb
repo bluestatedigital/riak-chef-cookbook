@@ -135,6 +135,20 @@ directory node[:riak][:core][:ring_state_dir] do
   recursive true
 end
 
+directory node[:riak][:merge_index][:data_root] do
+  owner "riak"
+  mode "0755"
+  action :create
+  recursive true
+end
+
+directory node[:riak][:merge_index][:data_root_2i] do
+  owner "riak"
+  mode "0755"
+  action :create
+  recursive true
+end
+
 directory node[:riak][:package][:config_dir] do
   owner "root"
   mode "0755"
